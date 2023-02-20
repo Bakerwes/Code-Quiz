@@ -32,4 +32,4 @@ The user will be able to save their score alongside their initials in the local 
 Finally, the user have a "New Game" button available that will restart the page and allow the questions to render again. 
 
 ***
-URL of Deployment: 
+URL of Deployment: https://bakerwes.github.io/Code-Quiz/
