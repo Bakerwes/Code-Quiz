@@ -178,6 +178,7 @@ startButton.addEventListener("click", () => {
 });
 
 function endQuiz() {
+    
     // Stops the timer
     clearInterval(quizTimer);
 
@@ -201,7 +202,7 @@ function endQuiz() {
     feedback.style.paddingBottom = "10px"
     questionSection.appendChild(feedback);
 
-    // Show save score button when quiz is finished or time is up
+    // Shows save score button when quiz is finished or time is up
     var saveScoreButton = document.getElementById("save-score");
     saveScoreButton.style.display = "flex"
 
@@ -214,7 +215,7 @@ function endQuiz() {
         location.reload();
     });
 
-    // Creates a new div to hold the new game and save score buttons
+    // Creates a new div to hold the new game and save score buttons (mainly to allow inline display)
     var buttonContainer = document.createElement("div");
     buttonContainer.appendChild(newGameButton);
     buttonContainer.appendChild(saveScoreButton);
@@ -244,7 +245,7 @@ function endQuiz() {
     saveScoreButton.style.transition = "transform 0.2s ease-in-out";
     saveScoreButton.style.transform = "scale(1)";
 
-    // Adds a mouseover event listener to the new game button
+    // Adds a mouseover event listener to the Save Score and New Game button
     newGameButton.addEventListener("mouseover", function () {
         newGameButton.style.transform = "scale(0.9)";
         newGameButton.style.backgroundColor = "rgb(113, 19, 201)"
@@ -253,7 +254,8 @@ function endQuiz() {
         saveScoreButton.style.transform = "scale(0.9)";
         saveScoreButton.style.backgroundColor = "rgb(113, 19, 201)"
     });
-    // Adds a mouseout event listener to the save score button
+    
+    // Adds a mouseout event listener to the Save Score  and New Game button
     newGameButton.addEventListener("mouseout", function () {
         newGameButton.style.transform = "scale(1.0)";
         newGameButton.style.backgroundColor = "blue";
@@ -273,13 +275,13 @@ function endQuiz() {
         // Prompt user for initials
         var initials = prompt("Enter your initials:");
 
-        // Save score to local storage
+        // Saves the score to local storage
         var scoreObject = { initials: initials, score: quizScore };
         var scores = JSON.parse(localStorage.getItem("scores") || "[]");
         scores.push(scoreObject);
         localStorage.setItem("scores", JSON.stringify(scores));
 
-        // Hide save score button
+        // Hides the save score button on completion
         saveScoreButton.style.display = "none";
     });
 }
