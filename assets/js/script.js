@@ -184,13 +184,17 @@ startButton.addEventListener("click", () => {
 });
 
 function endQuiz() {
+    
     // Stops the timer
     clearInterval(quizTimer);
 
     // Hides the score
     scoreStringEl.style.display = "none";
     scoreEl.style.display = "none";
-
+    
+    // Hides last feedback from start button function
+    feedbackEl.style.display = "none";
+    
     // Displays the quiz results
     var percentageScore = (quizScore / 80) * 100;
     questionSection.innerHTML = "";
