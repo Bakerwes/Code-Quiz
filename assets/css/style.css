@@ -94,3 +94,26 @@ body {
     background-color: rgb(113, 19, 201);
     cursor: pointer;
   }
+
+  #highscores-container {
+    color: white;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  #highscores-title {
+    text-shadow: 0 0 10px cyan, 0 0 20px blue, 0 0 30px rgb(113, 19, 201), 0 0 40px rgb(113, 19, 201), 0 0 50px rgb(113, 19, 201), 0 0 60px rgb(113, 19, 201), 0 0 70px rgb(148, 12, 211);
+  }
+
+  table {
+    margin-left: 15px;
+  }
+
+  tbody {
+    margin-left: 25px;
+  }
+
+  #clear-scores-btn {
+    display: flex;
+    margin-left: 15px;
+  }
