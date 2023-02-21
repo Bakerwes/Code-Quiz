@@ -289,8 +289,12 @@ function endQuiz() {
             // Invalid input
             alert("Please enter valid initials (letters only and not empty).");
         }
-
     });
+    
+ // Hides highscore table
+    var highScore = document.getElementById("highscores-container");
+    highScore.style.display = "none";
+    
 }
 // Populate the high scores table
 function displayHighScores() {
