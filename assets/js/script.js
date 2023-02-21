@@ -285,7 +285,7 @@ function endQuiz() {
             scores.push(scoreObject);
             localStorage.setItem("scores", JSON.stringify(scores));
             // Save the initials
-            alert("Your score was saved!");
+            alert("Your score has been saved!");
             saveScoreButton.style.display = "none";
         } else {
             // Invalid input
@@ -307,7 +307,7 @@ function displayHighScores() {
         var initialsCell = document.createElement("td");
         initialsCell.textContent = scoreObject.initials;
         var scoreCell = document.createElement("td");
-        scoreCell.textContent = scoreObject.score;
+        scoreCell.textContent = scoreObject.score + "/80";
         row.appendChild(initialsCell);
         row.appendChild(scoreCell);
         tableBody.appendChild(row);
