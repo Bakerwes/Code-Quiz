@@ -40,7 +40,7 @@ After the quiz is over, the user will receive their score/80 and a percentage of
 
 The user will be able to save their score alongside their initials in the local storage with the "Save Score" button
 
-Finally, the user have a "New Game" button available that will restart the page and allow the questions to render again. 
+Finally, the user has a "New Game" button available that will restart the page and allow the questions to render again. 
 
 ***
 URL of Deployment: https://bakerwes.github.io/Code-Quiz/
