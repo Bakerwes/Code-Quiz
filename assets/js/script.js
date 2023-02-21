@@ -142,7 +142,7 @@ startButton.addEventListener("click", () => {
                 // Checks if the answer is correct
                 if (option === question.answer) {
                     feedbackEl.textContent = "Correct!";
-                    feedbackEl.style.color = "green";
+                    feedbackEl.style.color = "rgb(3, 228, 3)";
                     feedbackEl.style.fontWeight = "bold";
                     quizScore += 10;
                     scoreEl.textContent = quizScore;
