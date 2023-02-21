@@ -294,7 +294,6 @@ function endQuiz() {
     });
     
  // Hides highscore table
-    var highScore = document.getElementById("highscores-container");
     highScore.style.display = "none";
     
 }
