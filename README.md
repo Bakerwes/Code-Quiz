@@ -35,7 +35,7 @@ After a question is answered the user will receive feedback saying "Correct!" or
 
 When the timer reaches zero or when the quiz is over, the function for rendering questions ends
 
-After the quiz is over, the user will receieve their score/80 and a percentage of 100
+After the quiz is over, the user will receive their score/80 and a percentage of 100
 
 The user will be able to save their score alongside their initials in the local storage with the "Save Score" button
 
