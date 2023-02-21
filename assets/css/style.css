@@ -99,6 +99,9 @@ body {
     color: white;
     justify-content: center;
     margin-top: 20px;
+    animation: shadow-pulse 3s ease-in-out infinite;
+    padding: 10px 20px;
+    border-radius: 10px;
   }
 
   #highscores-title {
