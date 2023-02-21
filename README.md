@@ -44,4 +44,5 @@ Finally, the user have a "New Game" button available that will restart the page 
 
 ***
 URL of Deployment: https://bakerwes.github.io/Code-Quiz/
-![2023-02-20](https://user-images.githubusercontent.com/122948418/220206390-2970a9ea-c214-429e-bc00-2cd9611fb1c1.png)
+
+![2023-02-20 (2)](https://user-images.githubusercontent.com/122948418/220244410-34da9419-d598-4c40-bf45-d3b4771c4bc7.png)
