@@ -89,12 +89,13 @@ var quizQuestions = [
     {
         question: "What is the purpose of the 'this' keyword in JavaScript?",
         options: [
-            "Refers to the object that the function is a method of, or the global object if the function is not a method of an object",
+            
             "Refers to the next function in the call stack",
             "Refers to the previous function in the call stack",
-            "Refers to the variable that was last declared"
+            "Refers to the variable that was last declared",
+            "Refers to the object that the function is a method of, or the global object if the function is not a method of an object"
         ],
-        answer: "Refers to the object that the function is a method of, or the global if the function is not a method of an object"
+        answer: "Refers to the object that the function is a method of, or the global object if the function is not a method of an object"
     }
 ];
 
