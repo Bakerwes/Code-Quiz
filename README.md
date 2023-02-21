@@ -5,6 +5,7 @@ Challenge-4
 ***
 
 This weeks assignment was to create a quiz relating to javascript or other web-devloping related topics. The acceptance criteria for this assignment goes as follows:
+
 GIVEN I am taking a code quiz
 
 WHEN I click the start button
