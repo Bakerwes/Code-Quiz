@@ -31,7 +31,7 @@ THEN I can save my initials and my score
 
 One of the first things to be presented to the user is the start button that allows the questions to render
 
-After a question is answered the user will recieve feedback saying "Correct!" or "Oh no! You lost 10 seconds!"
+After a question is answered the user will receive feedback saying "Correct!" or "Oh no! You lost 10 seconds!"
 
 When the timer reaches zero or when the quiz is over, the function for rendering questions ends
 
