@@ -141,13 +141,15 @@ startButton.addEventListener("click", () => {
 
                 // Checks if the answer is correct
                 if (option === question.answer) {
-                    feedbackEl.textContent = "<b>Correct!</b>";
-                    feedbackEl.style.color = "green"
+                    feedbackEl.textContent = "Correct!";
+                    feedbackEl.style.color = "green";
+                    feedbackEl.style.fontWeight = "bold";
                     quizScore += 10;
                     scoreEl.textContent = quizScore;
                 } else {
-                    feedbackEl.textContent = "<b>Oh no! You lost 10 seconds!</b>";
-                    feedbackEl.style.color = "red"
+                    feedbackEl.textContent = "Oh no! You lost 10 seconds!";
+                    feedbackEl.style.color = "red";
+                    feedbackEl.style.fontWeight = "bold";
                     quizTime -= 10;
                 }
 
