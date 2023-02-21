@@ -94,7 +94,7 @@ var quizQuestions = [
             "Refers to the previous function in the call stack",
             "Refers to the variable that was last declared"
         ],
-        answer: "Refers to the object that the function is a method of, or the global"
+        answer: "Refers to the object that the function is a method of, or the global if the function is not a method of an object"
     }
 ];
 
