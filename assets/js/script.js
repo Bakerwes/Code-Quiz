@@ -89,13 +89,12 @@ var quizQuestions = [
     {
         question: "What is the purpose of the 'this' keyword in JavaScript?",
         options: [
-            
+            "Refers to the object that the function is a method of, or the global object if the function is not a method of an object",
             "Refers to the next function in the call stack",
             "Refers to the previous function in the call stack",
-            "Refers to the variable that was last declared",
-            "Refers to the object that the function is a method of, or the global object if the function is not a method of an object"
+            "Refers to the variable that was last declared"
         ],
-        answer: "Refers to the object that the function is a method of, or the global object if the function is not a method of an object"
+        answer: "Refers to the object that the function is a method of, or the global if the function is not a method of an object"
     }
 ];
 
@@ -179,7 +178,6 @@ startButton.addEventListener("click", () => {
 });
 
 function endQuiz() {
-    
     // Stops the timer
     clearInterval(quizTimer);
 
@@ -203,7 +201,7 @@ function endQuiz() {
     feedback.style.paddingBottom = "10px"
     questionSection.appendChild(feedback);
 
-    // Shows save score button when quiz is finished or time is up
+    // Show save score button when quiz is finished or time is up
     var saveScoreButton = document.getElementById("save-score");
     saveScoreButton.style.display = "flex"
 
@@ -216,7 +214,7 @@ function endQuiz() {
         location.reload();
     });
 
-    // Creates a new div to hold the new game and save score buttons (mainly to allow inline display)
+    // Creates a new div to hold the new game and save score buttons
     var buttonContainer = document.createElement("div");
     buttonContainer.appendChild(newGameButton);
     buttonContainer.appendChild(saveScoreButton);
@@ -246,7 +244,7 @@ function endQuiz() {
     saveScoreButton.style.transition = "transform 0.2s ease-in-out";
     saveScoreButton.style.transform = "scale(1)";
 
-    // Adds a mouseover event listener to the Save Score and New Game button
+    // Adds a mouseover event listener to the buttons
     newGameButton.addEventListener("mouseover", function () {
         newGameButton.style.transform = "scale(0.9)";
         newGameButton.style.backgroundColor = "rgb(113, 19, 201)"
@@ -255,8 +253,8 @@ function endQuiz() {
         saveScoreButton.style.transform = "scale(0.9)";
         saveScoreButton.style.backgroundColor = "rgb(113, 19, 201)"
     });
-    
-    // Adds a mouseout event listener to the Save Score  and New Game button
+
+    // Adds a mouseout event listener to the save score button
     newGameButton.addEventListener("mouseout", function () {
         newGameButton.style.transform = "scale(1.0)";
         newGameButton.style.backgroundColor = "blue";
@@ -282,7 +280,55 @@ function endQuiz() {
         scores.push(scoreObject);
         localStorage.setItem("scores", JSON.stringify(scores));
 
-        // Hides the save score button on completion
+        // Hide save score button
         saveScoreButton.style.display = "none";
     });
 }
+// Populate the high scores table
+function displayHighScores() {
+    var scores = JSON.parse(localStorage.getItem("scores") || "[]");
+    var tableBody = document.querySelector("#highscores-table tbody");
+    tableBody.innerHTML = "";
+    scores.forEach(function (scoreObject) {
+        var row = document.createElement("tr");
+        var initialsCell = document.createElement("td");
+        initialsCell.textContent = scoreObject.initials;
+        var scoreCell = document.createElement("td");
+        scoreCell.textContent = scoreObject.score;
+        row.appendChild(initialsCell);
+        row.appendChild(scoreCell);
+        tableBody.appendChild(row);
+    });
+}
+
+// Clear the high scores from local storage and update the table
+function clearHighScores() {
+    localStorage.removeItem("scores");
+    displayHighScores();
+}
+
+// Add event listener to the clear scores button
+var clearScoresBtn = document.querySelector("#clear-scores-btn");
+clearScoresBtn.addEventListener("click", clearHighScores);
+
+// Display the high scores table
+displayHighScores();
+
+clearScoresBtn.style.backgroundColor = "blue";
+clearScoresBtn.style.color = "white";
+clearScoresBtn.style.border = "none";
+clearScoresBtn.style.fontSize = "13px";
+clearScoresBtn.style.cursor = "pointer";
+clearScoresBtn.style.borderRadius = "5px";
+clearScoresBtn.style.padding = "5px 10px";
+clearScoresBtn.style.transition = "transform 0.2s ease-in-out";
+clearScoresBtn.style.transform = "scale(1)";
+
+clearScoresBtn.addEventListener("mouseover", function () {
+    clearScoresBtn.style.transform = "scale(0.9)";
+    clearScoresBtn.style.backgroundColor = "rgb(113, 19, 201)"
+});
+clearScoresBtn.addEventListener("mouseout", function () {
+    clearScoresBtn.style.transform = "scale(1.0)";
+    clearScoresBtn.style.backgroundColor = "blue"
+});
