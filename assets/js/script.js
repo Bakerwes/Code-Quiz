@@ -273,7 +273,7 @@ function endQuiz() {
     saveScoreButton.addEventListener("click", function () {
         // Prompt user for initials
         var initials = prompt("Enter your initials:");
-
+        alert("Your score was saved!")
         // Saves the score to local storage
         var scoreObject = { initials: initials, score: quizScore };
         var scores = JSON.parse(localStorage.getItem("scores") || "[]");
@@ -319,6 +319,7 @@ clearScoresBtn.style.color = "white";
 clearScoresBtn.style.border = "none";
 clearScoresBtn.style.fontSize = "13px";
 clearScoresBtn.style.cursor = "pointer";
+clearScoresBtn.style.marginTop = "20px"
 clearScoresBtn.style.borderRadius = "5px";
 clearScoresBtn.style.padding = "5px 10px";
 clearScoresBtn.style.transition = "transform 0.2s ease-in-out";
