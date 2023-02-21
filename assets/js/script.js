@@ -273,15 +273,23 @@ function endQuiz() {
     saveScoreButton.addEventListener("click", function () {
         // Prompt user for initials
         var initials = prompt("Enter your initials:");
-        alert("Your score was saved!")
-        // Saves the score to local storage
-        var scoreObject = { initials: initials, score: quizScore };
-        var scores = JSON.parse(localStorage.getItem("scores") || "[]");
-        scores.push(scoreObject);
-        localStorage.setItem("scores", JSON.stringify(scores));
+        
+        // Allows the user to chose any letter but not a number
+        if (/^[a-zA-Z]+$/.test(initials) && initials.length > 0) {
+            
+            // Saves the score to local storage
+            var scoreObject = { initials: initials, score: quizScore };
+            var scores = JSON.parse(localStorage.getItem("scores") || "[]");
+            scores.push(scoreObject);
+            localStorage.setItem("scores", JSON.stringify(scores));
+            // Save the initials
+            alert("Your score was saved!");
+            saveScoreButton.style.display = "none";
+        } else {
+            // Invalid input
+            alert("Please enter valid initials (letters only and not empty).");
+        }
 
-        // Hide save score button
-        saveScoreButton.style.display = "none";
     });
 }
 // Populate the high scores table
