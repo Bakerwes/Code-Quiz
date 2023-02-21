@@ -304,8 +304,15 @@ function endQuiz() {
 // Populate the high scores table
 function displayHighScores() {
     var scores = JSON.parse(localStorage.getItem("scores") || "[]");
+    
+    // Sort the scores array in descending order by score
+    scores.sort(function(a, b) {
+        return b.score - a.score;
+    });
+    
     var tableBody = document.querySelector("#highscores-table tbody");
     tableBody.innerHTML = "";
+    
     scores.forEach(function (scoreObject) {
         var row = document.createElement("tr");
         var initialsCell = document.createElement("td");
